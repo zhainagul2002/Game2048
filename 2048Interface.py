@@ -52,24 +52,3 @@ def wait_for_key():
                     return 'q'
 
 
-def main():
-    pygame.init()
-    pygame.display.set_caption('2048')
-
-    pygame.font.init()
-    myfont = pygame.font.SysFont('Comic Sans MS', 30)
-
-    screen = pygame.display.set_mode((W, H))
-
-    running = True
-    while running:
-        np.random.shuffle(TEST_GRID)
-        draw_game(screen, TEST_GRID, myfont)
-        pygame.display.flip()
-        key = wait_for_key()
-        if key == 'q':
-            running = False
-
-
-if __name__ == "__main__":
-    main()
